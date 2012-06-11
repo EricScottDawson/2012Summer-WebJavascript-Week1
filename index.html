@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JavascriptMadLibs</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="author" content="The Chopping Block, Inc." />
+	<meta name="geo.country" content="US" />
+	<meta name="dc.language" content="en" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	
+	<link rel="stylesheet" href="styles.css" type="text/css" media="screen" charset="utf-8" />
+	
+	<style type="text/css" media="screen">		
+		/*local styles if any (quick tests and local only overrides)*/
+	</style>
+</head>
+<body>
+
+<div class="wrap" >
+	Project: JavascriptMadLibs
+	<ul>		
+		<li>1) Place to enter words that will be in the story</li>
+		<li>2) Way to say "Make those words show up in the story"</li>
+		<li>3) Story</li>
+	</ul>	
+
+	<br /><br />
+<!-- 1st word -->
+	<p>
+		Word 1 (noun - number): <input type="number" name="word1" value="" id="word1">		
+	</p>
+	<br /><br />
+
+<!-- 2nd word -->
+	<p>
+		Word 2 (verb): <input type="text" name="word2" value="" id="word2">
+	</p>
+	<br /><br />
+
+<!-- 3rd word -->
+	<p>
+		Word 3 (adjective): <input type="text" name="word3" value="" id="word3">		
+	</p>
+	<br /><br />
+
+<!-- 4th word -->
+	<p>
+		Word 4 (adverb): <!--	<input type="" name="word4" value="" id="word4">	-->
+		<select name="word4" value="" id="word4">
+			<option value="very">very</option>
+			<option value="moderately">moderately</option>
+			<option value="hardly">hardly</option>
+		</select>
+	</p>
+	<br /><span onClick="randomRange();">Madlib</span><br /><br />
+
+	<br /><br />
+	<div id="story1"></div>
+	<div id="story1_y"></div><div id="story1_a"></div><div id="story1_o"></div>	
+	<div id="story2"></div>
+	<div id="story3"></div>
+	<div id="story4"></div>
+
+</div>
+<script type="text/javascript" charset="utf-8">
+
+function randomRange(min, max)
+{
+	var min = 0;
+	var max = 11;
+	var result = (((Math.random()*(max-min)) + min));
+	if (result <= 3)
+	{
+		makeStoryA();
+		//	alert ("less");
+	}
+	else if (result > 3 && result <= 7)
+	{
+		makeStoryB();
+		//	alert ("more");
+	}
+	else if (result > 7)
+	{
+		makeStoryC();
+		//	alert ("more");
+	}
+
+}
+
+
+//	story A	---------------------------------------------------------------
+	function makeStoryA(){
+//	1st word
+		var word1 = document.getElementById('word1').value;
+		var story1 = "I'm " + word1 + " years old. ";		
+		var story1_y = "I am young!";
+		var story1_a = "I am average age!";
+		var story1_o = "I am old!";		
+		document.getElementById('story1').innerHTML = story1;
+
+		if (word1 < 38){
+		document.getElementById('story1_y').innerHTML = story1_y;
+		}
+		else if (word1 == 38){
+		document.getElementById('story1_a').innerHTML = story1_a;
+		}
+		else if (word1 > 38){
+		document.getElementById('story1_o').innerHTML = story1_o;
+		}
+
+//	2nd word
+		var word2 = document.getElementById('word2').value;
+		var story2 = "My friend is going to " + word2 + " int he future. ";		
+		document.getElementById('story2').innerHTML = story2;
+
+//	3rd word
+		var word3 = document.getElementById('word3').value;
+		var story3 = "I prefer food that is " + word3 + ". ";		
+		document.getElementById('story3').innerHTML = story3;
+
+//	4th word
+		var word4 = document.getElementById('word4').value;
+		var story4 = "She was " + word4 + " disappointed!";		
+		document.getElementById('story4').innerHTML = story4;
+	}
+
+
+
+//	story B	---------------------------------------------------------------
+	function makeStoryB(){
+//	1st word
+		var word1 = document.getElementById('word1').value;
+		var story1 = "I'm " + word1 + " years old. ";		
+		var story1_y = "I am young!";
+		var story1_a = "I am average age!";
+		var story1_o = "I am old!";		
+		document.getElementById('story1').innerHTML = story1;
+
+		if (word1 < 38){
+		document.getElementById('story1_y').innerHTML = story1_y;
+		}
+		else if (word1 == 38){
+		document.getElementById('story1_a').innerHTML = story1_a;
+		}
+		else if (word1 > 38){
+		document.getElementById('story1_o').innerHTML = story1_o;
+		}
+
+//	2nd word
+		var word2 = document.getElementById('word2').value;
+		var story2 = "I would like to " + word2 + " sometime soon. ";		
+		document.getElementById('story2').innerHTML = story2;
+
+//	3rd word
+		var word3 = document.getElementById('word3').value;
+		var story3 = "The world is very " + word3 + ". ";		
+		document.getElementById('story3').innerHTML = story3;
+
+//	4th word
+		var word4 = document.getElementById('word4').value;
+		var story4 = "I'm feeling " + word4 + " happy!";		
+		document.getElementById('story4').innerHTML = story4;
+	}
+
+
+
+//	story C	---------------------------------------------------------------
+	function makeStoryC(){
+//	1st word
+		var word1 = document.getElementById('word1').value;
+		var story1 = "I'm " + word1 + " years old. ";		
+		var story1_y = "I am young!";
+		var story1_a = "I am average age!";
+		var story1_o = "I am old!";		
+		document.getElementById('story1').innerHTML = story1;
+
+		if (word1 < 38){
+		document.getElementById('story1_y').innerHTML = story1_y;
+		}
+		else if (word1 == 38){
+		document.getElementById('story1_a').innerHTML = story1_a;
+		}
+		else if (word1 > 38){
+		document.getElementById('story1_o').innerHTML = story1_o;
+		}
+
+//	2nd word
+		var word2 = document.getElementById('word2').value;
+		var story2 = "My pet cat would like to " + word2 + " if she were able. ";		
+		document.getElementById('story2').innerHTML = story2;
+
+//	3rd word
+		var word3 = document.getElementById('word3').value;
+		var story3 = "My uncle is quite " + word3 + ". ";
+		document.getElementById('story3').innerHTML = story3;
+
+//	4th word
+		var word4 = document.getElementById('word4').value;
+		var story4 = "This is " + word4 + " boring!";		
+		document.getElementById('story4').innerHTML = story4;
+	}
+
+</script>	
+</body>
+</html>
